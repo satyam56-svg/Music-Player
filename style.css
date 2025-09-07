@@ -13,13 +13,16 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 10px;
 }
 
 .music-player {
     background: #ffe0e5;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;   /* ✅ responsive */
     padding: 25px 35px;
     text-align: center;
+    border-radius: 10px;
 }
 
 nav {
@@ -36,13 +39,12 @@ nav .circle {
     background: #fff;
     color: #f53192;
     box-shadow: 0 5px 10px rgba(255,26,26,0.22);
+    text-align: center;
 }
 
 .song-image {
     width: 220px;
-    /* border-radius: 50%;
-    border: 8px solid #fff;
-    box-shadow: 0 10px 60px rgba(255,26,26,0.22); */
+    max-width: 100%; /* ✅ responsive image */
 }
 
 .music-player h1 {
@@ -81,12 +83,13 @@ nav .circle {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap; /* ✅ mobile ke liye */
 }
 
 .controls div {
     width: 60px;
     height: 60px;
-    margin: 20px;
+    margin: 15px;
     background: #fff;
     display: inline-flex;
     align-items: center;
@@ -103,3 +106,47 @@ nav .circle {
     color: #fff;
 }
 
+/* ✅ Tablet View */
+@media (max-width: 768px) {
+    .music-player {
+        max-width: 320px;
+        padding: 20px;
+    }
+
+    .music-player h1 {
+        font-size: 18px;
+    }
+
+    .controls div {
+        width: 50px;
+        height: 50px;
+        margin: 12px;
+    }
+}
+
+/* ✅ Mobile View */
+@media (max-width: 480px) {
+    .music-player {
+        max-width: 280px;
+        padding: 15px;
+    }
+
+    .music-player h1 {
+        font-size: 16px;
+    }
+
+    .music-player p {
+        font-size: 12px;
+    }
+
+    .controls div {
+        width: 45px;
+        height: 45px;
+        margin: 10px;
+    }
+
+    #progress::-webkit-slider-thumb {
+        width: 25px;
+        height: 25px;
+    }
+}
